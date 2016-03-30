@@ -1,0 +1,7 @@
+---
+- name    : Webサーバの初期設定を行います
+  hosts   : webservers
+  become  : yes
+  roles   :
+    - common
+    - web

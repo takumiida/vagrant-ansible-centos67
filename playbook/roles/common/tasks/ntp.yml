@@ -1,0 +1,25 @@
+---
+- name      : ntpインストール
+  yum       :
+    name    : ntp
+    state   : installed
+
+- name      : ntpdが起動中か確認
+  shell     : "service ntpd status | grep -q 停止; echo $?"
+  register  : result
+
+- name      : ntpdate実行 (ntpd停止中の場合)
+  command   : ntpdate {{ ntp_servers.0 }}       # see group_vars/all.yml
+  when      : result.stdout == "0"
+
+- name      : テンプレートを/etc/ntp.confにコピー
+  notify    : ntpd再起動
+  template  :
+    src     : ntp.conf.j2
+    dest    : /etc/ntp.conf
+
+- name      : ntpd起動
+  service   :
+    name    : ntpd
+    state   : started
+    enabled : yes

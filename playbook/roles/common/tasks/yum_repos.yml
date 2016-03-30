@@ -1,0 +1,10 @@
+---
+- name    : EPELリポジトリをインストール
+  yum     :
+    name  : epel-release
+    state : installed
+
+- name    : Remiリポジトリをインストール
+  yum     :
+    name  : http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+    state : installed

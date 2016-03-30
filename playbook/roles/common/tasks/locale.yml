@@ -1,0 +1,8 @@
+---
+- name        : /etc/sysconfig/i18nを書き換え
+  lineinfile  :
+    dest      : /etc/sysconfig/i18n
+    state     : present
+    backrefs  : yes
+    regexp    : '^LANG=\"en_US.UTF-8\"'
+    line      : 'LANG="{{ locale }}"'     # see group_vars/all.yml

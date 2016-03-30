@@ -1,0 +1,14 @@
+---
+- name        : よく使うコマンドをインストール
+  yum         :
+    name      : "{{ item }}"
+    state     : installed
+  with_items  : util_packages   # see group_vars/all.yml
+
+- name        : Development toolsをインストール
+  yum         :
+    name      : "@Development tools"
+    state     : installed
+
+- name        : updatedbコマンド実行
+  shell       : updatedb

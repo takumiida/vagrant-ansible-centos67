@@ -1,0 +1,9 @@
+---
+- name        : iptables無効化
+  service     :
+    name      : "{{ item }}"
+    state     : stopped
+    enabled   : no
+  with_items  :
+    - iptables
+    - ip6tables

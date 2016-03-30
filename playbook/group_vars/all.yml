@@ -1,0 +1,17 @@
+---
+locale: ja_JP.UTF-8
+
+timezone: Asia/Tokyo
+
+ntp_servers:
+  - ntp.nict.jp
+  - ntp.jst.mfeed.ad.jp
+  - jp.pool.ntp.org
+
+util_packages:
+  - wget
+  - vim-enhanced
+  - nkf
+  - git
+  - tree
+  - mlocate

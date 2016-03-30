@@ -1,0 +1,26 @@
+---
+- name        : httpdインストール
+  yum         :
+    name      : httpd
+    state     : installed
+
+- name        : phpと関連パッケージインストール
+  yum         :
+    name      : "{{ item }}"
+    state     : installed
+  with_items  : php_packages    # see group_vars/webservers.yml
+
+- name        : httpd起動
+  service     :
+    name      : httpd
+    state     : started
+    enabled   : yes
+
+- name        : /etc/php.iniを書き換え
+  lineinfile  :
+    dest      : /etc/php.ini
+    state     : present
+    backrefs  : yes
+    regexp    : '^\;date.timezone =$'
+    line      : 'date.timezone = "{{ timezone }}"'    # see group_vars/all.yml
+  notify      : httpd再起動

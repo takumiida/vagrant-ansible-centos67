@@ -1,0 +1,5 @@
+---
+ntp_servers:
+  - ntp.nict.jp
+  - ntp.jst.mfeed.ad.jp
+  - jp.pool.ntp.org

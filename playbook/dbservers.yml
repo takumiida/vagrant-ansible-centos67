@@ -1,0 +1,7 @@
+---
+- name    : DBサーバの初期設定を行います
+  hosts   : dbservers
+  become  : yes
+  roles   :
+    - common
+    - db
