@@ -12,9 +12,9 @@ ansible_local provisionerを使って仮想マシン側にAnsibleをインスト
   - サーバー初期設定 (locale, timezone, ntpなど)
   - よく使うパッケージをインストール (wget, nkf, mlocaleなど)
 - webサーバーで実行するタスクをwebロールとして定義
-  - httpd, phpなどをインストール
+  - httpd, php7.0などをインストール
 - dbサーバーで実行するタスクをdbロールとして定義
-  - postgresqlなどをインストール
+  - postgresqlなどをインストール(予定)
 
 
 # 使用方法
