@@ -8,6 +8,7 @@
   yum         :
     name      : "{{ item }}"
     state     : installed
+    enablerepo: "{{ php_repos }}"   # see group_vars/webservers.yml
   with_items  : php_packages    # see group_vars/webservers.yml
 
 - name        : httpd起動
