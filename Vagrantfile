@@ -36,6 +36,7 @@ Vagrant.configure(2) do |config|
     end
   end
 
+=begin
   # 2台目の設定 (dbサーバー)
   config.vm.define "db1" do |server|
     server.vm.hostname = "db1"
@@ -53,5 +54,6 @@ Vagrant.configure(2) do |config|
       end
     end
   end
+=end
 
 end
