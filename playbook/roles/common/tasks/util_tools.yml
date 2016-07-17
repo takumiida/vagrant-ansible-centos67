@@ -3,7 +3,7 @@
   yum         :
     name      : "{{ item }}"
     state     : installed
-  with_items  : util_packages   # see group_vars/all.yml
+  with_items  : "{{ util_packages }}"   # see group_vars/all.yml
 
 - name        : Development toolsをインストール
   yum         :
